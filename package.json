@@ -1,0 +1,34 @@
+{
+  "name": "startale-checkout",
+  "version": "0.1.0",
+  "description": "Instant user onboarding, gasless purchases, and persistent sessions on Soneium Mainnet",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sambitsargam/startale-checkout.git"
+  },
+  "keywords": [
+    "react",
+    "checkout",
+    "soneium",
+    "zero-friction",
+    "startale",
+    "web3"
+  ],
+  "author": "Sambit Sargam Ekalabya",
+  "peerDependencies": {
+    "react": ">=17",
+    "react-dom": ">=17"
+  },
+  "dependencies": {
+    "viem": "^1.0.0",
+    "@privy-io/privy-react": "^1.0.0"
+  },
+  "scripts": {
+    "build": "rollup -c",
+    "prepare": "npm run build"
+  }
+}
