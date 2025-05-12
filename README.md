@@ -1,24 +1,35 @@
-# startale-checkout
+# Startale Checkout
 
-Instant user onboarding, gasless purchases, and persistent sessions on Soneium testnet only using Startale's Account Abstraction Toolkit.
+[![npm version](https://img.shields.io/npm/v/startale-oneclick-checkout)](https://www.npmjs.com/package/startale-oneclick-checkout) [![License](https://img.shields.io/npm/l/startale-oneclick-checkout)](LICENSE)
 
-## Installation
+**Zero-Friction Checkout** provides instant social-login onboarding, gasless transactions, and persistent sessions on Soneium Mainnet, powered by Startale’s Account Abstraction Toolkit.
+
+## 🚀 Features
+
+- **Social Login** (Google, Discord, etc.) via Privy  
+- **Smart Wallet Creation** (ERC-7579)  
+- **Gasless Transactions** via Startale Paymaster (ERC-4337)  
+- **Session Persistence** across devices  
+- **Plug & Play** Checkout Button and Hooks  
+- **Zero Configuration**: Public endpoints, no API keys
+
+## 📦 Installation
 
 ```bash
-npm install startale-checkout
+npm install startale-oneclick-checkout
 ```
 
-## Usage
+## 🎨 Usage
 
-Wrap your app with the session provider and use the checkout button:
+Wrap your application with the `SessionProvider`, then use the checkout button:
 
 ```tsx
 import React from 'react';
-import { SessionProvider, ZeroFrictionCheckoutButton } from 'startale-checkout';
+import { SessionProvider, ZeroFrictionCheckoutButton } from 'startale-oneclick-checkout';
 
 const App = () => (
   <SessionProvider>
-    <h1>Shop</h1>
+    <h1>Your Shop</h1>
     <ZeroFrictionCheckoutButton amount="0.01" currency="ETH" />
   </SessionProvider>
 );
@@ -26,34 +37,35 @@ const App = () => (
 export default App;
 ```
 
-## Publishing
+## 🔧 API Reference
 
-1. Build the package:
+### `SessionProvider`
 
-   ```bash
-   npm run build
-   ```
+Provides React context to manage session tokens.
 
-2. Login to npm (if not already):
+```tsx
+import { SessionProvider } from 'startale-oneclick-checkout';
 
-   ```bash
-   npm login
-   ```
+<SessionProvider>{/* your app */}</SessionProvider>
+```
 
-3. Publish the package:
+### `ZeroFrictionCheckoutButton`
 
-   ```bash
-   npm publish --access public
-   ```
+Props:
 
-4. Tag a new version after publishing:
+- `amount: string` (required)  
+- `currency?: string` (default: `'ETH'`)
 
-   ```bash
-   npm version patch
-   git push
-   git push --tags
-   ```
+```tsx
+<ZeroFrictionCheckoutButton amount="0.05" currency="ETH" />
+```
 
-## Repository
+### Hooks
 
-https://github.com/sambitsargam/startale-checkout
+- `useSocialLogin(): { login, logout, provider, address, authenticated, loading }`  
+- `useCheckout(): { checkout({ amount, currency }), loading }`  
+- `useSession(): { sessionToken, setSessionToken }`
+
+## ❤️ License
+
+MIT
