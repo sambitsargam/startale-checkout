@@ -1,6 +1,6 @@
 # startale-checkout
 
-Instant user onboarding, gasless purchases, and persistent sessions on Soneium Mainnet using Startale's Account Abstraction Toolkit.
+Instant user onboarding, gasless purchases, and persistent sessions on Soneium testnet only using Startale's Account Abstraction Toolkit.
 
 ## Installation
 
